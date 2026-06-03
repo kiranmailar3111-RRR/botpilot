@@ -13,14 +13,19 @@ app.use(express.json());
 const path = require('path');
 app.use('/widget', express.static(path.join(__dirname, '../widget')));
 
-const JWT_SECRET = 'botforge_secret_123';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // MySQL connection
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: 'botforge'
+  database: process.env.DB_NAME,
+  port: parseInt(process.env.DB_PORT),
+  ssl: { rejectUnauthorized: false },
+  connectTimeout: 30000,
+  waitForConnections: true,
+  connectionLimit: 10
 });
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
@@ -152,7 +157,7 @@ app.get('/api/bots/:id/embed', authMiddleware, async (req, res) => {
     [req.params.id, req.user.id]
   );
   if (!rows.length) return res.status(404).json({ error: 'Bot not found' });
-  res.json({ botId: rows[0].id, name: rows[0].name, embedCode: `<script src="http://localhost:5000/widget/widget.js" data-bot-id="${rows[0].id}" data-bot-name="${rows[0].name}" data-color="#185FA5"></script>` });
+  res.json({ botId: rows[0].id, name: rows[0].name, embedCode: `<script src="https://botpilot-a4is.onrender.com/widget/widget.js" data-bot-id="${rows[0].id}" data-bot-name="${rows[0].name}" data-color="#185FA5"></script>` });
 });
 // Analytics — message counts per bot
 app.get('/api/analytics', authMiddleware, async (req, res) => {
@@ -242,4 +247,4 @@ app.put('/api/bots/:id', authMiddleware, async (req, res) => {
   res.json({ success: true });
 });
 
-app.listen(5000, () => console.log('✅ Server running on http://localhost:5000'));
+app.listen(5000, () => console.log('✅ Server running on https://botpilot-a4is.onrender.com'));

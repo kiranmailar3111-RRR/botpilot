@@ -2,7 +2,7 @@
   const botId = document.currentScript.getAttribute('data-bot-id');
   const botName = document.currentScript.getAttribute('data-bot-name') || 'Assistant';
   const brandColor = document.currentScript.getAttribute('data-color') || '#185FA5';
-  const apiUrl = 'http://localhost:5000/api/chat';
+  const apiUrl = 'https://botpilot-a4is.onrender.com/api/chat';
 
   // ── Styles ──────────────────────────────────────────
   const style = document.createElement('style');
