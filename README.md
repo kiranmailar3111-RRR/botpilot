@@ -24,12 +24,15 @@ AI-powered chatbots and embed them on any website with one line of code.
 - Embeddable JavaScript widget development
 - Multi-tenant database architecture
 
-## ■■ Tech Stack
-Frontend → React.js + CSS3 + Axios
-Backend → Node.js + Express.js + REST API
-Database → MySQL (mysql2)
-Auth → JWT + bcryptjs
-AI → Groq API + LLaMA 3 (8B model)
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React.js, CSS3, Axios |
+| Backend | Node.js, Express.js |
+| Database | MySQL |
+| AI | Groq API, LLaMA 3 |
+| Auth | JWT, bcryptjs |
 | Hosting | Vercel + Render |
 
 ## 🏗️ Architecture
