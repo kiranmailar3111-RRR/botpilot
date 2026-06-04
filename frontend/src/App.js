@@ -260,14 +260,11 @@ export default function App() {
                     <i className="ti ti-arrow-up" style={{ fontSize:10 }} /> {bots.length} active
                   </div>
                 </div>
-                <div className="scard">
-                  <div className="scard-icon" style={{ background:'#f0fdf4' }}>
-                    <i className="ti ti-message" style={{ color:'#16a34a' }} />
-                  </div>
-                  <div className="scard-val">0</div>
-                  <div className="scard-label">Messages today</div>
-                  <div className="scard-trend neutral">All time total</div>
-                </div>
+              <div className="scard">
+            <div className="scard-label"><i className="ti ti-calendar" /> Today</div>
+            <div className="scard-val">{data.todayMsgs}</div>
+            <div className="scard-trend up">Messages today</div>
+          </div>
                 <div className="scard">
                   <div className="scard-icon" style={{ background:'#faf5ff' }}>
                     <i className="ti ti-users" style={{ color:'#7c3aed' }} />
