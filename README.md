@@ -16,15 +16,20 @@ AI-powered chatbots and embed them on any website with one line of code.
 - 📱 Responsive dashboard UI
 - 🗄️ MySQL database with multi-tenant isolation
 
-## 🛠️ Tech Stack
+- ## ■ What I Learned
+- Node.js + Express REST API development
+- JWT Authentication with bcryptjs
+- Groq API integration (LLaMA 3 8B model)
+- Real-time AI chat with custom system prompts
+- Embeddable JavaScript widget development
+- Multi-tenant database architecture
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React.js, CSS3, Axios |
-| Backend | Node.js, Express.js |
-| Database | MySQL |
-| AI | Groq API, LLaMA 3 |
-| Auth | JWT, bcryptjs |
+## ■■ Tech Stack
+Frontend → React.js + CSS3 + Axios
+Backend → Node.js + Express.js + REST API
+Database → MySQL (mysql2)
+Auth → JWT + bcryptjs
+AI → Groq API + LLaMA 3 (8B model)
 | Hosting | Vercel + Render |
 
 ## 🏗️ Architecture
@@ -68,7 +73,14 @@ cd frontend
 npm install
 npm start
 ```
-
-### Environment Variables
-## 👨‍💻 Author
-Built by Ravikiran — Full Stack Developer
+## ■■ Setup
+git clone https://github.com/kiranmailar3111-RRR/botpilot
+cd botpilot
+npm install
+cp .env.example .env
+# Add your GROQ_API_KEY in .env
+node server.js
+---
+## ■■■ Developer
+Ravikiran G Mailar
+■ linkedin.com/in/ravi-kiran-1a7010247
